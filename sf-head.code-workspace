@@ -1,14 +1,21 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "projects/sf-head-admin"
-		},
-		{
-			"path": "projects/sf-head-web"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "projects/sf-head-admin"
+    },
+    {
+      "path": "projects/sf-head-web"
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+      "strings": true
+    }
+  }
 }
