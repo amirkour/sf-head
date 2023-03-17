@@ -16,6 +16,9 @@
     },
     "editor.quickSuggestions": {
       "strings": true
+    },
+    "files.exclude": {
+      "projects": true
     }
   }
 }
