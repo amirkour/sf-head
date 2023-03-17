@@ -1,0 +1,16 @@
+version: '3'
+services:
+  sf-head-admin:
+    image: node:18-alpine
+    restart: always
+    volumes:
+      - ./projects/sf-head-admin:/usr/src/sf-head-admin
+    working_dir: /usr/src/sf-head-admin
+    command: npm run dev
+    # env_file: ./.api.env
+    ports:
+      - 3001:3001
+    environment:
+      - PORT=3001
+volumes:
+  sf-head-admin:
