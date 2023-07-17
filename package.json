@@ -2,7 +2,11 @@
   "name": "sf-head",
   "version": "1.0.0",
   "description": "Parent meta repo for sf-head",
-  "scripts": {},
+  "scripts": {
+    "init:admin": "git clone https://github.com/amirkour/sf-head-admin.git projects/sf-head-admin",
+    "init:web": "git clone https://github.com/amirkour/sf-head-web.git projects/sf-head-web",
+    "init": "npm run init:admin && npm run init:web"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amirkour/sf-head.git"
