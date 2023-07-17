@@ -12,8 +12,5 @@
   "bugs": {
     "url": "https://github.com/amirkour/sf-head/issues"
   },
-  "homepage": "https://github.com/amirkour/sf-head#readme",
-  "dependencies": {
-    "meta": "^2.2.25"
-  }
+  "homepage": "https://github.com/amirkour/sf-head#readme"
 }

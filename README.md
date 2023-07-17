@@ -1,2 +1,2 @@
 # sf-head
-Parent meta repo for sf-head
+Parent repo for sf-head
