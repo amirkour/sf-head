@@ -1,6 +1,8 @@
 version: '3'
 services:
   sf-head-admin:
+    depends_on:
+      - db
     image: node:18-alpine
     restart: always
     volumes:
@@ -12,5 +14,11 @@ services:
       - 3001:3001
     environment:
       - PORT=3001
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
 volumes:
   sf-head-admin:

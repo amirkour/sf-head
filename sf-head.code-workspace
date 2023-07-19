@@ -4,9 +4,6 @@
       "path": "."
     },
     {
-      "path": "projects/sf-head-admin"
-    },
-    {
       "path": "projects/sf-head-web"
     }
   ],
