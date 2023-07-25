@@ -1,15 +1,15 @@
 version: '3'
 services:
-  sf-head-admin:
+  sf-head-web:
     depends_on:
       - db
     image: node:18-alpine
     restart: always
     volumes:
-      - ./projects/sf-head-admin:/usr/src/sf-head-admin
-    working_dir: /usr/src/sf-head-admin
+      - ./projects/sf-head-web:/usr/src/sf-head-web
+    working_dir: /usr/src/sf-head-web
     command: npm run dev
-    # env_file: ./.api.env
+    env_file: ./.env.dev
     ports:
       - 3001:3001
     environment:
@@ -20,5 +20,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
 volumes:
-  sf-head-admin:
+  sf-head-web:

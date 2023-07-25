@@ -4,7 +4,8 @@
   "description": "Parent meta repo for sf-head",
   "scripts": {
     "init:web": "cd projects/sf-head-web && npm i",
-    "init": "npm npm run init:web"
+    "init": "npm run init:web",
+    "dev": "docker compose up"
   },
   "repository": {
     "type": "git",
