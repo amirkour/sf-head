@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 
-export default function Buildings() {
+export default function Item() {
   const [name, setName] = useState<string>("");
 
   const onSubmit = async () => {
     try {
-      const response = await fetch("/api/buildings", {
+      const response = await fetch("/api/items", {
         method: "POST",
         body: JSON.stringify({ name }),
       });
@@ -25,7 +25,7 @@ export default function Buildings() {
 
   return (
     <div>
-      <h1 className="text-center">Create a new building</h1>
+      <h1 className="text-center">Create a new item</h1>
       <div className="w-full max-w-xs">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
@@ -36,13 +36,9 @@ export default function Buildings() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
-              placeholder="New Building Name"
+              placeholder="New item Name"
               value={name}
-              onChange={(e) =>
-                setName((old) => {
-                  return old + e.target.value;
-                })
-              }
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="flex items-center justify-between">

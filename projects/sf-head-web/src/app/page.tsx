@@ -1,26 +1,25 @@
 import clientPromise from "@/lib/clientPromise";
-import { Building, InputOutput } from "@/lib/interfaces";
+import { Item, InputOutput } from "@/lib/interfaces";
 import Link from "next/link";
 
-async function getBulidings(): Promise<Building[]> {
+async function getBulidings(): Promise<Item[]> {
   const client = await clientPromise;
   const db = client.db("sf-head");
-  const buildingsCollection = db.collection<Building>("buildings");
+  const items = db.collection<Item>("items");
 
-  const cursor = buildingsCollection.find();
+  const cursor = items.find();
   return cursor.toArray();
 }
 
 export default async function Home() {
-  const buildings = await getBulidings();
-  console.log(`Existing buildings: ${JSON.stringify(buildings)}`);
+  const items = await getBulidings();
+  console.log(`Existing items: ${JSON.stringify(items)}`);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1>hi world</h1>
-      {buildings && buildings.length > 0 && <div>Existing buildings ...</div>}
-      {!buildings ||
-        (buildings.length <= 0 && <div>NO EXISTING BUILDINGS</div>)}
-      <Link href="/buildings">Create a building</Link>
+      {items && items.length > 0 && <div>Existing items ...</div>}
+      {!items || (items.length <= 0 && <div>NO EXISTING ITEMS</div>)}
+      <Link href="/items">Create a new item</Link>
     </main>
   );
 }

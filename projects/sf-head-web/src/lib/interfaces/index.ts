@@ -6,7 +6,7 @@ export interface InputOutput extends Document {
   ratePerMinute: number;
 }
 
-export interface Building extends Document {
+export interface Item extends Document {
   name: string;
   inputs: InputOutput[];
   outputs: InputOutput[];

@@ -1,6 +1,6 @@
 import clientPromise from "@/lib/clientPromise";
 import { NextResponse } from "next/server";
-import { Building } from "@/lib/interfaces";
+import { Item } from "@/lib/interfaces";
 
 export async function POST(request: Request) {
   const input = await request.json();
@@ -14,8 +14,8 @@ export async function POST(request: Request) {
 
   const client = await clientPromise;
   const db = client.db("sf-head");
-  const buildingsCollection = db.collection<Building>("buildings");
-  const result = await buildingsCollection.insertOne(input);
+  const items = db.collection<Item>("items");
+  const result = await items.insertOne(input);
 
   const output = { insertedId: result.insertedId };
   console.log(`returning ${JSON.stringify(output)}`);
