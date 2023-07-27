@@ -21,7 +21,9 @@ export default async function Home() {
       <h1 className="text-center">SF HEAD</h1>
       <ItemList items={items} />
       <div className="mt-4">
-      <Link href="/items">Create a new item</Link>
+        <button>
+          <Link href="/items">Create a new item</Link>
+        </button>
       </div>
     </main>
   );
